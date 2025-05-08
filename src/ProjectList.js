@@ -30,7 +30,7 @@ function ProjectList() {
 
   return (
     <div className="container my-5">
-      {/* <h2 className="text-center mb-4">Available Projects</h2> */}
+      <h2 className="text-center mb-4">Available Projects</h2>
       <div className="row">
         {projects.map(project => (
           <div key={project.id} className="col-md-4 mb-4">
