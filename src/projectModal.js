@@ -10,13 +10,27 @@ const ProjectModal = ({ project, onClose, onContinue }) => {
         <h2>{project.title}</h2>
 
         <div className="screenshots">
-          {[1, 2, 3, 4].map(num => (
-            <img
-              key={num}
-              src={`/screenshots/${project.id}_${num}.jpg`}
-              alt={`Screenshot ${num}`}
-            />
-          ))}
+          {/* Check if the project has specific screenshots */}
+          {project.screenshots && project.screenshots.length > 0 ? (
+            project.screenshots.map((src, index) => (
+              <img
+                key={index}
+                src={src}
+                alt={`Screenshot ${index + 1}`}
+                className="screenshot-img"
+              />
+            ))
+          ) : (
+            // Default case if no screenshots are provided
+            [1, 2, 3, 4].map(num => (
+              <img
+                key={num}
+                src={`/screenshots/${project.id}_${num}.jpg`}  // Default screenshot path
+                alt={`Screenshot ${num}`}
+                className="screenshot-img"
+              />
+            ))
+          )}
         </div>
 
         <div className="details">
@@ -24,7 +38,13 @@ const ProjectModal = ({ project, onClose, onContinue }) => {
           <p><strong>Layout:</strong> Responsive design using CSS Grid and Flexbox. Includes navbar, sections, and footer.</p>
         </div>
 
-        <button onClick={onContinue} className="pay-btn">Continue to Payment</button>
+        {project.isFree ? (
+          <a href={project.zipPath} download className="pay-btn" style={{ textAlign: 'center', display: 'inline-block' }}>
+            Download Code
+          </a>
+        ) : (
+          <button onClick={onContinue} className="pay-btn">Continue to Payment</button>
+        )}
       </div>
 
       <style>{`
@@ -44,13 +64,18 @@ const ProjectModal = ({ project, onClose, onContinue }) => {
           border-radius: 10px;
           position: relative;
         }
-        .screenshots {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 10px;
-          margin: 15px 0;
-        }
-        .screenshots img {
+       .screenshots {
+    overflow-y: auto;
+    display: grid
+;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin: auto;
+    max-height: 320px;
+    justify-content: center;
+    align-items: center;
+}
+        .screenshot-img {
           width: 100%;
           border-radius: 6px;
         }
@@ -74,6 +99,7 @@ const ProjectModal = ({ project, onClose, onContinue }) => {
           border: none;
           border-radius: 6px;
           cursor: pointer;
+          text-decoration: none;
         }
       `}</style>
     </div>

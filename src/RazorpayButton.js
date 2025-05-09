@@ -68,27 +68,17 @@ function RazorpayButton({ amount, zipPath }) {
     <button
       onClick={handlePayment}
       disabled={isLoading}
-      style={{
-        padding: '10px 20px',
-        backgroundColor: isLoading ? '#aaa' : (isSuccess ? 'green' : '#007bff'),
-        color: '#fff',
-        border: 'none',
-        borderRadius: '4px',
-        cursor: isLoading ? 'not-allowed' : 'pointer',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        minWidth: '100px'
-      }}
+      className='btn btn-primary w-50'
     >
       {isLoading ? (
         <div
           style={{
-            width: '18px',
-            height: '18px',
+            width: '10px',
+            height: '10px',
             border: '2px solid #fff',
             borderTop: '2px solid transparent',
             borderRadius: '50%',
+            margin:'auto',
             animation: 'spin 1s linear infinite'
           }}
         />

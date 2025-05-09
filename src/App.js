@@ -15,9 +15,11 @@ function App() {
 
   return (
     <div className="App">
-      <Header user={user} onLogout={handleLogout} />
       {user ? (
-        <ProjectList />
+        <>
+          <Header user={user} onLogout={handleLogout} />
+          <ProjectList />
+        </>
       ) : isSignUp ? (
         <Signup onLogin={setUser} onSwitchToLogin={() => setIsSignUp(false)} />
       ) : (

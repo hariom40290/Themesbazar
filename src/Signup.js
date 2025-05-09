@@ -16,47 +16,55 @@ function Signup({ onLogin, onSwitchToLogin }) {
   };
 
   return (
-    <div className="login-container">
+    <div className="login-container row p-0 ">
       {/* Left Side */}
-      <div className="login-left">
-        <img 
-          src="https://img.freepik.com/free-vector/hand-drawn-essay-illustration_23-2150268421.jpg?t=st=1746786892~exp=1746790492~hmac=82dc8cd83a5ed20c3c43c8078e424e6faaa408ba0cd893543e57c241f59ea7c4&w=900" 
-          alt="Templates preview" 
-          className="login-image"
-        />
-        <h1 className="login-heading">Start Selling and Sharing Premium Website Templates</h1>
-        <p className="login-description">
-          Sign up to list your modern and responsive HTML, CSS, and JavaScript templates.
-          Connect with a growing community of developers and designers eager for great designs.
-        </p>
+      <div className="login-left col-12 col-lg-6">
+        <div className='row align-items-center p-4'>
+          <div className='col-12  col-md-4 col-lg-12'>
+            <img 
+              src="../imagever.png" 
+              alt="Templates preview" 
+              className="login-image"
+            />
+          </div>
+          <div className='col-12 col-md-8 col-lg-12'>
+            <h1 className="login-heading">Start Selling and Sharing Premium Website Templates</h1>
+            <p className="login-description">
+              Sign up to list your modern and responsive HTML, CSS, and JavaScript templates.
+              Connect with a growing community of developers and designers eager for great designs.
+            </p>
+          </div>
+        </div>
       </div>
 
       {/* Right Side */}
-      <div className="login-right">
-        <h2 className="form-title">Create an Account</h2>
-        <input
-          type="text"
-          placeholder="Enter your name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          className="form-input"
-        />
-        <input
-          type="email"
-          placeholder="Enter your email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          className="form-input"
-        />
-        <input
-          type="password"
-          placeholder="Create a password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          className="form-input"
-        />
-        <button onClick={handleSignup} className="form-button">Sign Up</button>
-        <button onClick={onSwitchToLogin} className="form-link">Already have an account? Login</button>
+      <div className="login-right col-12 col-lg-6">
+        <div className='p-4'>
+          <h2 className="form-title">Create an Account</h2>
+          <input
+            type="text"
+            placeholder="Enter your name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            className="form-input"
+          />
+          <input
+            type="email"
+            placeholder="Enter your email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="form-input"
+          />
+          <input
+            type="password"
+            placeholder="Create a password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className="form-input"
+          />
+          <button onClick={handleSignup} className="form-button w-100">Sign Up</button>
+          <button onClick={onSwitchToLogin} className="form-link">Already have an account? Login</button>
+        </div>
       </div>
     </div>
   );
