@@ -13,8 +13,9 @@ function Header({ user, onLogout }) {
       <div className="logo">
         <img src="../image.png" alt="Logo" className="logo-img" />
       </div>
-
-      {user ? (
+<a href="https://hariomdeveloper.wuaze.com/"  target="_blank">
+   About Me
+</a>      {user ? (
         <div className="user-menu">
           <span className="user-email">{user}</span>
           <div
