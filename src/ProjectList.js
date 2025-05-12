@@ -12,7 +12,7 @@ const projects = [
       "/04.png",
       "/05.png",
     ] },
-  // { id: 2, title: "E-commerce Template", price: 99, zipPath: "/anon", image: "../anon.zip", previewLink: "/ecommerce-demo", screenshots: ["/screenshots/2_1.jpg", "/screenshots/2_2.jpg"] },
+  { id: 2, title: "E-commerce Template", price: 99, zipPath: "/anon", image: "../anon.zip", previewLink: "/ecommerce-demo", screenshots: ["/screenshots/2_1.jpg", "/screenshots/2_2.jpg"] },
   // Add other projects similarly
 ];
 
