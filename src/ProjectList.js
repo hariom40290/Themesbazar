@@ -5,7 +5,7 @@ import './styles/style.css';
 
 
 const projects = [
-  { id: 1, title: "Portfolio Website", price: 0, zipPath: "/anon.zip", image: "/Anon-website.png", previewLink: "/portfolio-demo",
+  { id: 1, title: "Portfolio Website", price: 1, zipPath: "/anon.zip", image: "/Anon-website.png", previewLink: "/portfolio-demo",
      screenshots: ["/01.png",
       "/02.png",
       "/03.png",
