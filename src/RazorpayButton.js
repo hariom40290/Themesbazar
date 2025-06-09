@@ -24,7 +24,7 @@ function RazorpayButton({ amount, zipPath }) {
     }
 
     const options = {
-      key: "rzp_test_z1rTiDtv9XPBrK",
+      key: "rzp_live_NDk3WhXHDztDBS",
       amount: amount * 100,
       currency: "INR",
       name: "Code Seller",
